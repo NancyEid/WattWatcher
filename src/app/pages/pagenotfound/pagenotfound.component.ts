@@ -8,5 +8,6 @@ import { Component } from '@angular/core';
   styleUrl: './pagenotfound.component.scss'
 })
 export class PagenotfoundComponent {
+  imageFirst = 'assets/error.svg';
 
 }

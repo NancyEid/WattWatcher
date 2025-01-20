@@ -1,50 +1,198 @@
 .error-page {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  color: #fff;
-  text-align: center;
+  width: 100%;
+  height: 130vh;
+  font-family: "Inter", sans-serif;
+  background-color: #F5F5F5;
+  overflow: hidden;
 
   .error-content {
-    max-width: 600px;
-    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    /* Add this to position the text on top of the image */
 
-
-    .error-code {
-      font-size: 250px;
-      font-weight: 900;
-      background: linear-gradient(to left, #31ba9c, #142a8d);
-      background-clip: text;
-      -webkit-text-fill-color: transparent;
+    .main-image {
+      margin: 100px;
+      max-width: 100%;
+      height: auto;
     }
 
-    .error-message {
-      font-size: 45px;
-      margin: 20px 0;
+    .container {
+      position: relative;
+
+      .btn {
+        position: absolute;
+        top: 100px;
+        left: 70px;
+        border: 1px solid #205149;
+        background-color: #205149;
+        border-radius: 5px;
+        height: 44px;
+        width: 233px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        a {
+          text-decoration: none;
+          color: #F9FFFE;
+        }
+      }
+
+      h1,
+      h2,
+      p {
+        color: #205149;
+      }
+
+      h1 {
+        position: absolute;
+        font-size: 150px;
+        font-weight: 800;
+        line-height: 68.98px;
+        top: -270px;
+        left: 200px;
+      }
+
+      h2 {
+        font-size: 48px;
+        font-weight: 700;
+        white-space: nowrap;
+        /* Ensure the text stays in one line */
+        position: absolute;
+        top: -100px;
+        left: 400px;
+        transform: translateX(-50%);
+        /* Center the text horizontally */
+        z-index: 1;
+      }
+
+      p {
+        white-space: nowrap;
+        /* Ensure the text stays in one line */
+        position: absolute;
+        left: 65px;
+        font-weight: 400;
+        font-size: 20px;
+        line-height: 26.63px;
+      }
     }
+  }
+}
 
-    .error-description {
-      font-size: 18px;
-      margin-bottom: 30px;
-      color: #484848;
+@media (max-width: 1200px) {
+  .error-page {
+    height: 90vh;
+    padding-top: 150px;
 
+    .error-content {
+      flex-direction: column;
+      /* Stack items vertically */
+      text-align: center;
+      /* Center-align text */
+
+      .main-image {
+        margin: 50px 0;
+        /* Reduce margin */
+        order: 2;
+        /* Move image below text */
+
+        img {
+          max-width: 80%;
+          /* Adjust image size for tablets */
+        }
+      }
+
+      .container {
+        order: 1;
+        /* Move text above image */
+        position: static;
+        /* Reset absolute positioning */
+        text-align: center;
+        /* Center-align text */
+
+        h1 {
+          position: static;
+          /* Reset absolute positioning */
+          font-size: 120px;
+          margin-bottom: 20px;
+          /* Add spacing */
+          transform: none;
+          /* Remove transform */
+        }
+
+        h2 {
+          position: static;
+          /* Reset absolute positioning */
+          font-size: 36px;
+          margin-bottom: 10px;
+          /* Add spacing */
+          transform: none;
+          /* Remove transform */
+        }
+
+        p {
+          position: static;
+          /* Reset absolute positioning */
+          font-size: 18px;
+          margin-bottom: 20px;
+          /* Add spacing */
+          transform: none;
+          /* Remove transform */
+        }
+
+        .btn {
+          position: static;
+          /* Reset absolute positioning */
+          margin: 0 auto;
+          /* Center the button */
+          margin-top: 20px;
+          /* Add spacing */
+          transform: none;
+          /* Remove transform */
+        }
+      }
     }
+  }
+}
 
-    .error-link {
-      display: inline-block;
-      padding: 10px 20px;
-      font-size: 18px;
-      color: #ffffff;
-      text-decoration: none;
-      border: 1px solid white;
-      border-radius: 5px;
-      transition: background-color 0.3s, color 0.3s;
+@media (max-width: 768px) {
+  .error-page {
+    padding-top: 100px;
+    height: 68vh;
 
-      &:hover {
-        color: #333;
-        border: 1px solid #333;
+    .error-content {
+      .main-image {
+        margin: 30px 0;
+        /* Further reduce margin */
 
+        img {
+          max-width: 60%;
+          /* Adjust image size for mobile */
+        }
+      }
+
+      .container {
+        h1 {
+          font-size: 80px;
+          /* Further reduce font size */
+        }
+
+        h2 {
+          font-size: 24px;
+          /* Further reduce font size */
+        }
+
+        p {
+          font-size: 16px;
+          /* Further reduce font size */
+        }
+
+        .btn {
+          width: 200px;
+          /* Adjust button width */
+        }
       }
     }
   }

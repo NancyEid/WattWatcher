@@ -161,54 +161,77 @@
 
 /* Responsive Adjustments for Small Screens */
 @media (max-width: 768px) {
+
   .first,
   .second,
   .third,
   .fourth,
   .fifth {
-    height: auto; /* Adjust height to fit content */
-    padding: 40px 20px; /* Add padding for spacing */
-    overflow: hidden; /* Prevent image overflow */
+    height: auto;
+    /* Adjust height to fit content */
+    padding: 40px 20px;
+    /* Add padding for spacing */
+    overflow: hidden;
+    /* Prevent image overflow */
 
     .container {
-      flex-direction: column; /* Stack content vertically */
-      align-items: center; /* Center-align container content */
-      text-align: center; /* Center-align all text */
+      flex-direction: column;
+      /* Stack content vertically */
+      align-items: center;
+      /* Center-align container content */
+      text-align: center;
+      /* Center-align all text */
 
       .Intro,
       .Det,
       .Third,
       .Fourth,
       .Fifth {
-        width: 100%; /* Full width for text sections */
-        margin-bottom: 20px; /* Space between text and images */
+        width: 100%;
+        /* Full width for text sections */
+        margin-bottom: 20px;
+        /* Space between text and images */
         display: flex;
         flex-direction: column;
-        align-items: center; /* Center-align text content */
+        justify-content: center;
+        align-items: center;
+        align-items: center;
+        /* Center-align text content */
 
         h1 {
-          font-size: 32px; /* Reduce font size for smaller screens */
+          font-size: 32px;
+          /* Reduce font size for smaller screens */
           line-height: 40px;
-          text-align: center; /* Center-align headings */
-          margin: 0 auto; /* Center headings horizontally */
+          text-align: center;
+          /* Center-align headings */
+          margin: 0 auto;
+          /* Center headings horizontally */
         }
 
         p {
-          font-size: 16px; /* Reduce font size for smaller screens */
+          font-size: 16px;
+          /* Reduce font size for smaller screens */
           line-height: 24px;
-          text-align: center; /* Center-align paragraphs */
-          margin: 0 auto; /* Center paragraphs horizontally */
-          max-width: 90%; /* Limit width for better readability */
+          text-align: center;
+          /* Center-align paragraphs */
+          margin: 0 auto;
+          /* Center paragraphs horizontally */
+          max-width: 90%;
+          /* Limit width for better readability */
         }
       }
 
       .main-image {
-        width: 100%; /* Full width for images */
-        margin-top: 20px; /* Add spacing between text and images */
+        width: 100%;
+        /* Full width for images */
+        margin-top: 20px;
+        /* Add spacing between text and images */
 
         img {
-          width: 100%; /* Ensure the image fills the container */
-          height: auto; /* Maintain aspect ratio */
+          width: 100%;
+          /* Ensure the image fills the container */
+          height: auto;
+          /* Maintain aspect ratio */
         }
       }
     }
@@ -217,14 +240,28 @@
   .third {
     .container {
       .main-image {
-        background-color: #40A392; /* Background color for the image container */
-        margin-right: 0; /* Remove negative margin */
+        width: 120%;
+        margin-right: 0;
+        /* Remove negative margin */
 
         img {
-          height: 100%; /* Ensure the image fills the container */
-          object-fit: cover; /* Cover the entire area without distortion */
+          height: 100%;
+          /* Ensure the image fills the container */
+          object-fit: cover;
+          /* Cover the entire area without distortion */
         }
       }
     }
+  }
+
+  .Third,
+  .Fourth,
+  .Fifth {
+
+    h1,
+    p {
+      padding-left: 30px;
+    }
+
   }
 }
