@@ -1,0 +1,141 @@
+.container {
+  height: 65vh;
+}
+.downloads {
+  display: flex;
+  align-content: center;
+  justify-content: space-between;
+  font-family: "Inter", sans-serif;
+  position: relative;
+
+  h1 {
+    font-size: 40px;
+    font-weight: 800;
+    color: #F9FFFE;
+    max-width: 500px;
+    margin-top: 90px;
+  }
+
+  p {
+    color: #F9FFFE;
+    font-size: 16px;
+    font-weight: 300;
+    max-width: 450px;
+  }
+
+  .mainimage {
+    position: absolute;
+    top: 0;
+    left: 1000px;
+  }
+}
+button {
+  margin-top: 10px;
+  background-color: transparent;
+  border: none;
+
+}
+
+.second {
+  background-color: #F9FFFE;
+  font-family: "Inter", sans-serif;
+  height: 90vh;
+  padding: 200px;
+
+
+  h1 {
+    text-align: center;
+    color: #205149;
+    font-size: 32px;
+    font-weight: 700;
+  }
+
+  .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    text-align: center;
+    transform: translateY(-80px);
+
+
+    .Det {
+      transition: all 0.2s ease;
+
+      p {
+        color: #091715;
+        font-size: 16px;
+        font-weight: 300;
+        max-width: 190px;
+        margin-top: 10px;
+        line-height: 20px;
+
+      }
+
+      &:hover {
+        transform: translateY(-20px);
+      }
+    }
+
+  }
+}
+/* Responsive Adjustments for Small Screens */
+@media (max-width: 768px) {
+  .container {
+    height: auto; /* Adjust height to fit content */
+    padding: 20px; /* Add padding for spacing */
+  }
+
+  .downloads {
+    flex-direction: column; /* Stack content vertically */
+    align-items: center; /* Center-align content */
+    text-align: center; /* Center-align text */
+
+    h1 {
+      font-size: 32px; /* Reduce font size for smaller screens */
+      margin-top: 20px; /* Adjust margin */
+      max-width: 100%; /* Allow text to take full width */
+    }
+
+    p {
+      font-size: 14px; /* Reduce font size for smaller screens */
+      max-width: 100%; /* Allow text to take full width */
+    }
+
+    .mainimage {
+      position: static; /* Reset absolute positioning */
+      margin-top: 20px; /* Add spacing between text and image */
+      width: 100%; /* Ensure image fits within the container */
+      max-width: 300px; /* Limit image width */
+      height: auto; /* Maintain aspect ratio */
+    }
+  }
+
+  button {
+    margin-top: 20px; /* Add spacing between buttons */
+    display: flex; /* Use flexbox to center buttons */
+    justify-content: center; /* Center buttons horizontally */
+    width: 100%; /* Ensure buttons take full width */
+  }
+
+  .second {
+    height: auto; /* Adjust height to fit content */
+    padding: 40px 20px; /* Adjust padding for small screens */
+
+    h1 {
+      font-size: 28px; /* Reduce font size for smaller screens */
+    }
+
+    .container {
+      flex-direction: column; /* Stack content vertically */
+      transform: translateY(0); /* Reset transform */
+      gap: 40px; /* Add spacing between items */
+
+      .Det {
+        p {
+          font-size: 14px; /* Reduce font size for smaller screens */
+          max-width: 100%; /* Allow text to take full width */
+        }
+      }
+    }
+  }
+}

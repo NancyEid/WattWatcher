@@ -1,0 +1,226 @@
+
+body {
+  font-family: "Inter", sans-serif;
+}
+
+svg {
+  margin-right: 0.5rem;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  max-width: 1300px;
+  margin: auto;
+}
+
+.row {
+  display: flex;
+}
+
+ul {
+  list-style: none;
+}
+
+.footer {
+  padding: 70px;
+}
+
+.footer-col {
+  flex: 1;
+  padding: 15px;
+}
+
+.footer-col h4 {
+  font-size: 18px;
+  color: #ffffff;
+  margin-bottom: 15px;
+  font-weight: 500;
+  position: relative;
+}
+
+.footer-col .left {
+  padding-left: 60px;
+}
+
+.footer-col ul li a {
+  padding: 2px;
+  font-size: 16px;
+  text-decoration: none;
+  font-weight: 300;
+  color: #FFFFFF;
+  display: block;
+  transition: all 0.3s ease;
+}
+
+.footer-col .Navigation li a:hover {
+  padding-left: 5px;
+  color: #4BA494;
+}
+
+
+.footer-col .social-links a {
+  display: inline-block;
+  margin: 0 15px 15px 0;
+  text-align: center;
+  // width: 15px;
+  // height: 25px;
+  line-height: 40px;
+  color: #ffffff;
+  font-size: 23px;
+  transition: all 0.2s ease;
+}
+
+.footer-col .social-links a:hover {
+  color: #24262b;
+}
+
+.footer-bottom {
+  font-family: "Inter", sans-serif;
+  background-color: #18413A;
+  color: #F9FFFE;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  font-size: 16px;
+  padding: 10px;
+  align-items: center;
+
+  .span {
+    margin-top: 10px;
+    font-size: 14px;
+    padding-left: 100px;
+  }
+
+  div {
+    span {
+      // padding: 20px;
+      padding-right: 50px;
+    }
+  }
+}
+
+.Ask {
+  position: relative;
+
+  .Email {
+    background-color: #18413A;
+    border: 1px solid #205149;
+    border-radius: 5px;
+    height: 44px;
+    width: 340px;
+  }
+
+  .Email::placeholder {
+    color: #F9FFFE;
+    font-size: 16px;
+    font-weight: 300;
+    padding: 16px;
+  }
+
+  .Subscribe {
+    width: 108px;
+    height: 41.8px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    margin-top: 60px;
+    background-color: #F9FFFE;
+    color: #18413A;
+    border: #F9FFFE;
+    font-size: 16px;
+    position: absolute;
+    top: -58.5px;
+    right: 1px;
+    transition: all 0.2s ease;
+
+    &:hover {
+      background-color: #b1b1b1;
+      // color: #4BA494;
+    }
+  }
+}
+
+
+@media (max-width: 768px) {
+  .footer {
+    padding: 20px;
+    // text-align: center;
+  }
+
+  .footer .row {
+    flex-direction: column; // Stack all columns vertically
+    // align-items: center;
+  }
+
+  .footer-col {
+    width: 100%; // Each column takes full width
+    padding: 10px 0;
+    max-width: 200px;
+  }
+
+  .footer-col h4 {
+    font-size: 18px;
+  }
+
+  .footer-col .left {
+    padding: 0;
+    margin: 0;
+  }
+
+  .footer-col ul {
+    margin: 0 auto;
+    padding: 0;
+  }
+
+  .footer-col ul li {
+    margin-bottom: 5px;
+  }
+
+  .footer-col ul li a {
+    font-size: 14px;
+  }
+
+  .footer-col .social-links {
+    justify-content: center;
+    gap: 10px;
+    margin: 10px 0;
+  }
+
+  .Ask {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .Ask .Email {
+    width: 100%; // Adjust input width
+    position: relative;
+  }
+
+  .Ask .Subscribe {
+    width: 45%; // Adjust button width
+    position: absolute;
+    top: -58px;
+    left: 140px;
+  }
+
+  .footer-bottom {
+    padding: 0;
+    margin: 0;
+    height: 5vh;
+    position: relative;
+    span {
+      position: absolute;
+      left: -50px;
+    }
+  }
+  .footer-bottom div span {
+    display: none;
+  }
+
+}

@@ -1,0 +1,242 @@
+/* Desktop Styling (Remains Unchanged) */
+.first {
+  width: 100%;
+  height: 100vh;
+  font-family: "Inter", sans-serif;
+
+  .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .Intro {
+      h1 {
+        font-size: 57px;
+        max-width: 510px;
+        font-weight: 700;
+        line-height: 68.98px;
+        color: white;
+      }
+
+      p {
+        max-width: 300px;
+        font-weight: 200;
+        font-size: 22px;
+        line-height: 26.63px;
+        color: white;
+      }
+
+      button {
+        margin-top: 60px;
+        width: 309px;
+        height: 44px;
+        background-color: white;
+        color: #205149;
+        border: white;
+        font-weight: 700;
+        font-size: 16px;
+        transition: all 0.2s ease;
+
+        &:hover {
+          background-color: #142e29;
+          border-color: #142e29;
+          color: #ffffff;
+        }
+      }
+    }
+  }
+}
+
+.second {
+  background-color: #F9FFFE;
+  font-family: "Inter", sans-serif;
+
+  .container {
+    display: flex;
+    align-items: center;
+
+    .Det {
+      h1 {
+        font-size: 32px;
+        font-weight: 700;
+        line-height: 38.73px;
+        color: #205149;
+        margin-bottom: 20px;
+      }
+
+      p {
+        max-width: 650px;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 19.36px;
+        color: #091715;
+        margin-left: 10px;
+      }
+    }
+  }
+}
+
+.third {
+  background-color: #EFF5F4;
+  font-family: "Inter", sans-serif;
+  height: 412px;
+
+  .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .Third {
+      margin-top: 50px;
+      margin-right: 50px;
+
+      h1 {
+        font-size: 32px;
+        font-weight: 700;
+        line-height: 38.73px;
+        color: #205149;
+        margin-bottom: 20px;
+      }
+
+      p {
+        max-width: 700px;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 19.36px;
+        color: #091715;
+      }
+    }
+  }
+}
+
+.fourth {
+  background-color: #F9FFFE;
+  font-family: "Inter", sans-serif;
+  padding: 40px;
+
+  .container {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+
+    .Fourth {
+      margin-top: 50px;
+      margin-right: 50px;
+
+      h1 {
+        font-size: 32px;
+        font-weight: 700;
+        line-height: 38.73px;
+        color: #205149;
+        margin-bottom: 20px;
+      }
+
+      p {
+        max-width: 700px;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 19.36px;
+        color: #091715;
+      }
+    }
+  }
+}
+
+.Last {
+  height: 182px;
+  background-color: #E0EBEA;
+  font-family: "Inter", sans-serif;
+
+  .container {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+
+    .last {
+      margin-top: 50px;
+      margin-right: 50px;
+
+      h1 {
+        font-size: 29px;
+        font-weight: 800;
+        line-height: 35.1px;
+        color: #205149;
+        margin-bottom: 10px;
+      }
+
+      p {
+        max-width: 400px;
+        font-weight: 300;
+        font-size: 14px;
+        line-height: 16.94px;
+        color: #000000;
+      }
+    }
+  }
+}
+
+/* Responsive Adjustments for Smaller Screens */
+@media (max-width: 768px) {
+  .first,
+  .second,
+  .third,
+  .fourth,
+  .Last {
+    height: auto; // Adjust height to fit content
+    padding: 20px 0; // Add padding for spacing
+
+    .container {
+      flex-direction: column; // Stack content vertically
+      align-items: center;
+      text-align: center;
+
+      .Intro,
+      .Det,
+      .Third,
+      .Fourth,
+      .last {
+        text-align: center; // Center text for readability
+        padding: 10px 15px;
+
+        h1 {
+          font-size: 32px; // Reduce font size for smaller screens
+          line-height: 40px;
+        }
+
+        p {
+          font-size: 16px; // Reduce font size for smaller screens
+          line-height: 24px;
+          max-width: 100%; // Allow text to take full width
+        }
+      }
+
+      .main-image {
+        img {
+          max-width: 100%; // Ensure images resize properly
+          height: auto;
+          margin-top: 20px; // Add spacing between text and images
+        }
+      }
+
+      button {
+        width: 100%; // Make button full width
+        max-width: 200px; // Limit button width for smaller screens
+        margin-top: 20px; // Adjust spacing
+      }
+    }
+  }
+
+  .first {
+    height: auto; // Adjust height to fit content
+    padding: 40px 0; // Add more padding for the first section
+  }
+
+  .third,
+  .fourth {
+    h1,
+    p {
+      margin-left: 0; // Remove left margin for centered text
+    }
+  }
+}
+

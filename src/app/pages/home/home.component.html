@@ -1,0 +1,169 @@
+<section class="first">
+  <div class="container">
+    <div class="Intro">
+      <h1>{{ titleFirst }}</h1>
+      <p>{{ descriptionFirst }}</p>
+      <button class="btn btn-primary" >Download the App</button>
+    </div>
+    <div class="main-image">
+      <img [src]="imageFirst" alt="Smart Energy">
+    </div>
+  </div>
+</section>
+
+<section class="second">
+  <div class="container">
+    <div class="main-image">
+      <img [src]="imageSecond" alt="Energy Control">
+    </div>
+    <div class="Det">
+      <h1>{{ titleSecond }}</h1>
+      <p>{{ descriptionSecond }}</p>
+    </div>
+  </div>
+</section>
+
+<section class="third">
+  <div class="container">
+    <div class="Third">
+      <h1>{{ titleThird }}</h1>
+      <p>{{ descriptionThird }}</p>
+    </div>
+    <div class="main-image">
+      <img [src]="imageThird" alt="Stay Informed">
+    </div>
+  </div>
+</section>
+
+<section class="fourth">
+  <div class="container">
+    <div class="main-image">
+      <img [src]="imageFourth" alt="Never Miss a Beat">
+    </div>
+    <div class="Fourth">
+      <h1>{{ titleFourth }}</h1>
+      <p>{{ descriptionFourth }}</p>
+    </div>
+  </div>
+</section>
+
+<!-- <section class="Last">
+  <div class="container">
+    <div class="last">
+      <h1>{{ titleLast }}</h1>
+      <p>{{ descriptionLast }}</p>
+    </div>
+    <div class="Ask">
+      <input type="email" [(ngModel)]="email" placeholder="Enter your email" class="Email">
+      <button class="Submit" (click)="submitEmail()">Submit</button>
+    </div>
+  </div>
+</section> -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <section>
+  <div class="container">
+    <header>
+      <h3>Template Deiven Forms Example</h3>
+    </header>
+    <article>
+      <form #contactForm="ngForm" (ngSubmit)="submit(contactForm.value)">
+        <div class="mb-3">
+          <label for="firstName" class="form-label">First Name</label>
+          <input type="text" class="form-control" id="firstName" name="firstName" #firstName="ngModel" ngModel required
+            minlength="3" maxlength="10">
+          @if (firstName.touched && !firstName.valid) {
+          <div>
+            @if (firstName.errors && firstName.errors['required']) {
+            <span class="text-danger">First Name is Required</span>
+            }
+            @if (firstName.errors && firstName.errors['minlength']) {
+            <span class="text-danger">First Name is minmum 3 charcters</span>
+            }
+            @if (firstName.errors && firstName.errors['maxlength']) {
+            <span class="text-danger">First Name is maximum 10 charcters</span>
+            }
+          </div>
+          }
+        </div>
+        <div class="mb-3">
+          <label for="lastName" class="form-label">Last Name</label>
+          <input type="text" class="form-control" id="lastName" name="lastName" #lastName="ngModel" ngModel required
+            minlength="3" maxlength="10">
+          @if (lastName.touched && !lastName.valid) {
+          <div>
+            @if (lastName.errors && lastName.errors['required']) {
+            <span class="text-danger">Last Name is Required</span>
+            }
+            @if (lastName.errors && lastName.errors['minlength']) {
+            <span class="text-danger">Last Name is minmum 3 charcters</span>
+            }
+            @if (lastName.errors && lastName.errors['maxlength']) {
+            <span class="text-danger">Last Name is maximum 10 charcters</span>
+            }
+          </div>
+          }
+        </div>
+        <div class="mb-3">
+          <label for="PhoneNumber" class="form-label">PhoneNumber</label>
+          <input type="PhoneNumber" class="form-control" id="PhoneNumber" name="PhoneNumber" #PhoneNumber="ngModel" ngModel required pattern="^[0-9]{11}$">
+          @if (PhoneNumber.touched && !PhoneNumber.valid) {
+          <div>
+            @if (PhoneNumber.errors && PhoneNumber.errors['required']) {
+            <span class="text-danger">Phone Number is Required</span>
+            }
+            @if (PhoneNumber.errors && PhoneNumber.errors['pattern']) {
+            <span class="text-danger">Phone Number must be exactly 11 digits </span>
+            }
+          </div>
+        }
+        </div>
+        <div class="mb-3">
+          <label for="Email" class="form-label">Email</label>
+          <input type="Email" class="form-control" id="Email" name="Email" #Email="ngModel" ngModel required email>
+          @if (Email.touched && !Email.valid) {
+          <div>
+            @if (Email.errors && Email.errors['required']) {
+            <span class="text-danger">Email is Required</span>
+            }
+            @if (Email.errors && Email.errors['email']) {
+            <span class="text-danger">Email should be (example&#64;yahoo.com) </span>
+            }
+
+          </div>
+          }
+        </div>
+        <div class="mb-3">
+          <label for="userMessage" class="form-label">Message</label>
+          <textarea class="form-control" id="userMessage" name="userMessage" #userMessage="ngModel" ngModel required
+            rows="3"></textarea>
+          @if (userMessage.touched && !userMessage.valid) {
+          <div>
+            @if (userMessage.errors && userMessage.errors['required']) {
+            <span class="text-danger">Message is Required</span>
+            }
+          </div>
+          }
+        </div>
+        <div class="mb-3">
+          <button type="submit" class="btn btn-primary" [class.disabled]="!contactForm.valid">Submit Form</button>
+        </div>
+      </form>
+    </article>
+  </div>
+</section> -->

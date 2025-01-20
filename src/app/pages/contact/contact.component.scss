@@ -1,0 +1,296 @@
+.container {
+  font-family: "Inter", sans-serif;
+  padding: 10px;
+  margin: 50px;
+  margin-left: 150px;
+  display: flex;
+  background-color: #205149;
+  position: relative;
+  height: 220px;
+
+  .topic {
+    h2 {
+      font-size: 32px;
+      font-weight: 700;
+      color: #F9FFFE;
+    }
+
+    p {
+      font-size: 16px;
+      color: #F9FFFE;
+      font-weight: 200;
+      line-height: 20px;
+    }
+  }
+}
+
+article {
+  font-family: "Inter", sans-serif;
+  display: flex;
+  background-color: #F9FFFE;
+  justify-content: space-evenly;
+  height: 150vh;
+  width: 100%;
+  padding: 20px;
+
+  .form {
+    padding: 50px;
+    background-color: #F9FFFE;
+    color: #F9FFFE;
+    display: flex;
+    flex-direction: column;
+    width: 846px;
+    height: 518px;
+    border-radius: 5px;
+    position: absolute;
+    top: 270px;
+    left: 150px;
+
+    .input-row {
+      display: flex;
+      justify-content: space-between;
+      max-width: 642px;
+    }
+
+    .form-control {
+      display: flex;
+      background-color: transparent;
+      width: 310px;
+      height: 44px;
+      border: 2px solid #205149;
+      border-radius: 5px;
+
+      &:focus {
+        border: 2px solid #205149;
+        box-shadow: 0 0 5px rgba(32, 81, 73, 0.5);
+      }
+
+      &::placeholder {
+        padding: 10px;
+      }
+    }
+
+    label {
+      font-size: 16px;
+      font-weight: 800;
+      color: #205149;
+    }
+
+    #userMessage {
+      width: 642px;
+      height: 176px;
+    }
+
+    button {
+      font-size: 15px;
+      padding: 10px;
+      font-weight: 200;
+      background-color: #205149;
+      border: 2px solid #205149;
+      width: 311px;
+      height: 44px;
+      position: absolute;
+      left: 385px;
+
+      &:hover {
+        color: white;
+        background-color: #153a34;
+        border: 2px solid #153a34;
+      }
+    }
+  }
+
+  .Container {
+    background-color: #EFF5F4;
+    width: 290px;
+    height: 330px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+    position: absolute;
+    top: 350px;
+    left: 920px;
+
+    h3 {
+      color: #205149;
+      font-size: 16px;
+      font-weight: 700;
+    }
+
+    a {
+      padding: 5px;
+      margin: 2px;
+    }
+
+    hr {
+      width: 220px;
+      border: 1px solid #205149;
+    }
+
+    span {
+      padding: 10px;
+      font-size: 16px;
+      font-weight: 300;
+    }
+
+    .contact {
+      display: flex;
+      flex-direction: column;
+      margin-left: -10px;
+    }
+
+    .connect {
+      margin-left: -100px;
+      padding: 10px;
+
+      a {
+        font-size: 20px;
+        line-height: 20px;
+      }
+    }
+  }
+
+  iframe {
+    position: absolute;
+    top: 850px;
+    width: 1069px;
+    height: 420px;
+    left: 200px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .container {
+    margin: 20px;
+    margin-left: 20px;
+    height: auto;
+    padding: 20px;
+    text-align: center;
+
+    .topic {
+      h2 {
+        font-size: 28px;
+      }
+
+      p {
+        font-size: 14px;
+      }
+    }
+  }
+
+  article {
+    flex-direction: column;
+    align-items: center;
+    height: auto;
+    padding: 10px;
+
+    .form {
+      position: static;
+      width: 100%;
+      max-width: 600px;
+      height: auto;
+      padding: 20px;
+      margin-top: 20px;
+
+      .input-row {
+        flex-direction: column;
+        gap: 20px;
+      }
+
+      .form-control {
+        width: 100%;
+      }
+
+      #userMessage {
+        width: 100%;
+      }
+
+      button {
+        position: static;
+        width: 100%;
+        margin-top: 20px;
+      }
+    }
+
+    .Container {
+      position: static;
+      width: 100%;
+      max-width: 600px;
+      margin-top: 20px;
+      height: auto;
+      padding: 20px;
+
+      .connect {
+        margin-left: 0;
+      }
+    }
+
+    iframe {
+      position: static;
+      width: 100%;
+      height: 300px;
+      margin-top: 20px;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    margin: 10px;
+    margin-left: 10px;
+    padding: 10px;
+
+    .topic {
+      h2 {
+        font-size: 24px;
+      }
+
+      p {
+        font-size: 12px;
+      }
+    }
+  }
+
+  article {
+    padding: 10px;
+
+    .form {
+      padding: 10px;
+
+      .form-control {
+        height: 40px;
+      }
+
+      #userMessage {
+        height: 150px;
+      }
+
+      button {
+        height: 40px;
+        font-size: 14px;
+      }
+    }
+
+    .Container {
+      padding: 10px;
+
+      h3 {
+        font-size: 14px;
+      }
+
+      span {
+        font-size: 14px;
+      }
+
+      .connect a {
+        font-size: 18px;
+      }
+    }
+
+    iframe {
+      height: 250px;
+    }
+  }
+}

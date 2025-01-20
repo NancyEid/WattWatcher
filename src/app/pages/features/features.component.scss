@@ -1,0 +1,230 @@
+/* Desktop Styling (Remains Unchanged) */
+.first {
+  background-color: #F9FFFE;
+  width: 100%;
+  max-height: 100vh;
+  font-family: "Inter", sans-serif;
+
+  .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .Intro {
+      h1 {
+        font-size: 40px;
+        font-weight: 700;
+        line-height: 68.98px;
+        color: #205149;
+      }
+
+      p {
+        max-width: 650px;
+        font-weight: 300;
+        font-size: 20px;
+        line-height: 26.63px;
+      }
+    }
+  }
+}
+
+.second {
+  background-color: #EFF5F4;
+  font-family: "Inter", sans-serif;
+
+  .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    gap: 150px;
+
+    .Det {
+      h1 {
+        font-size: 40px;
+        font-weight: 700;
+        line-height: 38.73px;
+        color: #205149;
+        margin-bottom: 20px;
+      }
+
+      p {
+        max-width: 550px;
+        font-weight: 300;
+        font-size: 20px;
+        line-height: 26.63px;
+      }
+    }
+  }
+}
+
+.third {
+  background-color: #F9FFFE;
+  font-family: "Inter", sans-serif;
+
+  .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .Third {
+      margin-top: 50px;
+      margin-right: 50px;
+      position: relative;
+
+      h1 {
+        font-size: 40px;
+        font-weight: 700;
+        line-height: 38.73px;
+        color: #205149;
+        margin-bottom: 20px;
+      }
+
+      p {
+        max-width: 600px;
+        font-weight: 300;
+        font-size: 20px;
+        line-height: 26.63px;
+      }
+    }
+
+    .main-image {
+      background-color: #40A392;
+      width: 500px;
+      margin-right: -62.5px;
+    }
+  }
+}
+
+.fourth {
+  background-color: #F9FFFE;
+  font-family: "Inter", sans-serif;
+  height: 100vh;
+
+  .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .Fourth {
+      margin-top: 50px;
+      margin-right: 50px;
+
+      h1 {
+        font-size: 40px;
+        font-weight: 700;
+        line-height: 38.73px;
+        color: #205149;
+        margin-bottom: 20px;
+      }
+
+      p {
+        max-width: 630px;
+        font-weight: 300;
+        font-size: 20px;
+        line-height: 26.63px;
+      }
+    }
+  }
+}
+
+.fifth {
+  background-color: #E0EBEA;
+  font-family: "Inter", sans-serif;
+
+  .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .Fifth {
+      margin-top: 50px;
+      margin-right: 50px;
+      position: relative;
+
+      h1 {
+        font-size: 40px;
+        font-weight: 700;
+        line-height: 38.73px;
+        color: #205149;
+        margin-bottom: 20px;
+      }
+
+      p {
+        max-width: 630px;
+        font-weight: 300;
+        font-size: 20px;
+        line-height: 26.63px;
+      }
+    }
+  }
+}
+
+/* Responsive Adjustments for Small Screens */
+@media (max-width: 768px) {
+  .first,
+  .second,
+  .third,
+  .fourth,
+  .fifth {
+    height: auto; /* Adjust height to fit content */
+    padding: 40px 20px; /* Add padding for spacing */
+    overflow: hidden; /* Prevent image overflow */
+
+    .container {
+      flex-direction: column; /* Stack content vertically */
+      align-items: center; /* Center-align container content */
+      text-align: center; /* Center-align all text */
+
+      .Intro,
+      .Det,
+      .Third,
+      .Fourth,
+      .Fifth {
+        width: 100%; /* Full width for text sections */
+        margin-bottom: 20px; /* Space between text and images */
+        display: flex;
+        flex-direction: column;
+        align-items: center; /* Center-align text content */
+
+        h1 {
+          font-size: 32px; /* Reduce font size for smaller screens */
+          line-height: 40px;
+          text-align: center; /* Center-align headings */
+          margin: 0 auto; /* Center headings horizontally */
+        }
+
+        p {
+          font-size: 16px; /* Reduce font size for smaller screens */
+          line-height: 24px;
+          text-align: center; /* Center-align paragraphs */
+          margin: 0 auto; /* Center paragraphs horizontally */
+          max-width: 90%; /* Limit width for better readability */
+        }
+      }
+
+      .main-image {
+        width: 100%; /* Full width for images */
+        margin-top: 20px; /* Add spacing between text and images */
+
+        img {
+          width: 100%; /* Ensure the image fills the container */
+          height: auto; /* Maintain aspect ratio */
+        }
+      }
+    }
+  }
+
+  .third {
+    .container {
+      .main-image {
+        background-color: #40A392; /* Background color for the image container */
+        margin-right: 0; /* Remove negative margin */
+
+        img {
+          height: 100%; /* Ensure the image fills the container */
+          object-fit: cover; /* Cover the entire area without distortion */
+        }
+      }
+    }
+  }
+}
