@@ -3,3 +3,26 @@ body {
   background-color: #205149 ;
 
 }
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 79.2px;
+}
+
+::selection {
+  background-color: #4BA494;
+  opacity: 0.2;
+  color: white;
+}
+
+::-webkit-scrollbar {
+  width: 12px;
+  background-color: #fff;
+  border-left: 2px solid #eee;
+  box-shadow: 0px 0px 21px 0px rgba(162, 162, 162, 0.2) inset;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #205149;
+  box-shadow: 0px 0px 10px 0px #eeeeee8c inset;
+  border-radius: 100vh;
+}

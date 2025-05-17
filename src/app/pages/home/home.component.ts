@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, AfterViewInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
 @Component({
@@ -9,8 +9,8 @@ import { FormsModule } from '@angular/forms';
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'
 })
-export class HomeComponent {
-
+export class HomeComponent implements AfterViewInit {
+  // Your existing content
   titleFirst = 'Smart Energy, Smart Savings';
   descriptionFirst = 'Connect your smart plugs and reduce energy costs today.';
   imageFirst = 'assets/Home1.svg';
@@ -27,6 +27,38 @@ export class HomeComponent {
   descriptionFourth = 'Receive notifications when your energy usage spikes or devices fail. Get customized reports and recommendations to help save more.';
   imageFourth = 'assets/home4.svg';
 
+  // Loading animation control
+  showLoading = true;
 
+  constructor() {
+    // Simulate loading completion
+    setTimeout(() => {
+      this.showLoading = false;
+    }, 1200);
+  }
+
+  ngAfterViewInit() {
+    this.initializeAnimations();
+  }
+
+  private initializeAnimations() {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+
+          // Optional: Unobserve after animation triggers
+          // observer.unobserve(entry.target);
+        }
+      });
+    }, {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    });
+
+    document.querySelectorAll('.animate-section').forEach(section => {
+      observer.observe(section);
+    });
+  }
 }
 

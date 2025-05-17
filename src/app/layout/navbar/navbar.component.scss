@@ -1,9 +1,8 @@
-
 .navbar {
   background-color: transparent !important;
   padding: 20px;
   font-family: "Inter", sans-serif;
-
+  box-shadow: 0px 0px 14px 0px #0000001b;
 
   .navbar-brand {
     display: flex;
@@ -11,6 +10,15 @@
     color: #fff;
     font-size: 20px;
     font-weight: 800;
+    transition: transform 0.3s ease;
+
+    &:hover {
+      transform: scale(1.05);
+
+      svg {
+        animation: pulse 1.5s infinite;
+      }
+    }
 
     svg {
       margin-right: 0.2rem;
@@ -20,17 +28,67 @@
   ul {
     gap: 25px;
 
+    .nav-item {
+      position: relative;
+      transition: all 0.3s ease;
+    }
+
     .nav-link {
-      color: #fff !important;
+      color: #d9d9d9 !important;
       font-weight: 400;
       font-size: 16px;
       margin-left: 20px;
+      position: relative;
+      transition: all 0.3s ease;
+      display: inline-block; // Needed for transform to work
 
-      &.active {
-        color: #4BA494 !important;
-        font-weight: 600;
+      &::after {
+        content: '';
+        position: absolute;
+        bottom: -2px;
+        left: 0;
+        width: 0;
+        height: 3px;
+        background-color: #4BA494;
+        transition: width 0.3s ease;
       }
 
+      &:hover {
+        color: #fff;
+        transform: scale(1.1);
+
+        &::after {
+          width: 100%;
+        }
+      }
+
+      &.active {
+        color: #ffffff !important;
+        font-weight: 600;
+
+        &::after {
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+  100% { transform: scale(1); }
+}
+
+/* Mobile responsiveness */
+@media (max-width: 991.98px) {
+  .navbar {
+    ul {
+      .nav-link {
+        &:hover {
+          transform: none; // Disable scale on mobile
+        }
+      }
     }
   }
 }
