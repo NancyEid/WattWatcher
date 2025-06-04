@@ -1,0 +1,145 @@
+.first {
+  width: 100%;
+  height: 100vh;
+  font-family: "Inter", sans-serif;
+  background-color: #EFF5F4;
+
+  .container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 100%;
+
+    .Intro {
+      h1 {
+        font-size: 40px;
+        font-weight: 600;
+        line-height: 68.98px;
+        color: #205149;
+      }
+
+      p {
+        max-width: 500px;
+        font-weight: 300;
+        font-size: 18px;
+        color: #091715;
+        margin-top: 20px;
+      }
+    }
+  }
+}
+
+
+.second {
+  background-color: #F9FFFE;
+  font-family: "Inter", sans-serif;
+  padding: 80px 0;
+
+  .container,
+  .container2,
+  .container4 {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    gap: 40px;
+
+    .Det {
+      position: relative;
+
+      .h1 {
+        color: #40A392;
+        font-size: 36px;
+        font-weight: 900;
+        position: absolute;
+        left: -80px;
+        top: 0;
+      }
+
+      .title {
+        font-size: 36px;
+        font-weight: 700;
+        line-height: 38.73px;
+        color: #205149;
+        margin-bottom: 20px;
+        // margin-left: 80px;
+
+      }
+
+      p {
+        max-width: 300px;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 19.36px;
+        color: #091715;
+        // margin-left: 80px;
+        text-align: center;
+
+      }
+
+      .dotimage {
+        position: absolute;
+        left: -50px;
+        top: 70px;
+      }
+    }
+  }
+
+  .container1,
+  .container3,
+  .container5 {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    gap: 40px;
+
+    .Det {
+      position: relative;
+      margin-top: 80px;
+
+      .h1 {
+        color: #40A392;
+        font-size: 36px;
+        font-weight: 900;
+        position: absolute;
+        left: -70px;
+        top: 0;
+      }
+
+      .thirdtitle {
+        font-size: 36px;
+        font-weight: 700;
+        line-height: 38.73px;
+        color: #205149;
+        margin-bottom: 20px;
+        // margin-left: 80px;
+
+      }
+
+      p {
+        max-width: 330px;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 19.36px;
+        color: #091715;
+        // margin-left: 80px;
+        text-align: center;
+
+      }
+
+      .dotimage1 {
+        position: absolute;
+        right: 368px;
+        top: 65px;
+      }
+    }
+  }
+
+  .container2 ,.container4{
+    justify-content: space-evenly;
+    margin-top: 70px;
+  }
+
+  .container3,.container5 {
+    margin-top: 20px;
+  }
+}
