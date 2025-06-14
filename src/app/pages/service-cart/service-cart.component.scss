@@ -1,0 +1,21 @@
+.cart-summary {
+  margin-top: 20px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  text-align: center;
+
+  h3 {
+    color: #2e7d32;
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  p {
+    font-size: 1.2em;
+    color: #2e7d32;
+  }
+}

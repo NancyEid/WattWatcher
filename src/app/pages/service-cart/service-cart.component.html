@@ -1,0 +1,10 @@
+<div class="cart-summary" *ngIf="cartItems.length > 0">
+  <h3>Cart Summary</h3>
+  <ul>
+    <li *ngFor="let item of cartItems">{{ item.name }} - Quantity: {{ item.quantity }} - Price: €{{ item.price * item.quantity }}</li>
+  </ul>
+  <p>Total: €{{ cartItems.reduce((sum, item) => sum + (item.price * item.quantity), 0) }}</p>
+</div>
+<div class="cart-summary" *ngIf="cartItems.length === 0">
+  <p>Your cart is empty.</p>
+</div>

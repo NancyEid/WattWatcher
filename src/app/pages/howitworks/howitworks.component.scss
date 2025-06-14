@@ -1,3 +1,4 @@
+/* Base styles (unchanged from your original desktop styles) */
 .first {
   width: 100%;
   height: 100vh;
@@ -28,7 +29,6 @@
     }
   }
 }
-
 
 .second {
   background-color: #F9FFFE;
@@ -61,8 +61,6 @@
         line-height: 38.73px;
         color: #205149;
         margin-bottom: 20px;
-        // margin-left: 80px;
-
       }
 
       p {
@@ -71,9 +69,7 @@
         font-size: 16px;
         line-height: 19.36px;
         color: #091715;
-        // margin-left: 80px;
         text-align: center;
-
       }
 
       .dotimage {
@@ -111,8 +107,6 @@
         line-height: 38.73px;
         color: #205149;
         margin-bottom: 20px;
-        // margin-left: 80px;
-
       }
 
       p {
@@ -121,9 +115,7 @@
         font-size: 16px;
         line-height: 19.36px;
         color: #091715;
-        // margin-left: 80px;
         text-align: center;
-
       }
 
       .dotimage1 {
@@ -134,12 +126,239 @@
     }
   }
 
-  .container2 ,.container4{
+  .container2, .container4 {
     justify-content: space-evenly;
     margin-top: 70px;
   }
 
-  .container3,.container5 {
+  .container3, .container5 {
     margin-top: 20px;
+  }
+}
+
+/* Animation styles (unchanged) */
+.first, .second {
+  opacity: 0;
+  animation: fadeIn 1s ease-out forwards;
+}
+
+.first { animation-delay: 0.2s; }
+.second { animation-delay: 0.4s; }
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.container, .container4 {
+  .Det {
+    opacity: 0;
+    animation: slideFromLeft 0.6s ease-out forwards;
+    animation-delay: 0.2s;
+  }
+
+  .main-image img {
+    opacity: 0;
+    animation: slideFromRight 0.6s ease-out forwards;
+    animation-delay: 0.4s;
+  }
+}
+
+.container2 {
+  .Det, .main-image img {
+    opacity: 0;
+    animation: fadeIn 0.6s ease-out forwards;
+  }
+
+  .Det { animation-delay: 0.2s; }
+  .main-image img { animation-delay: 0.4s; }
+}
+
+.container1, .container3, .container5 {
+  .Det {
+    opacity: 0;
+    animation: slideFromRight 0.6s ease-out forwards;
+    animation-delay: 0.2s;
+  }
+
+  .main-image img {
+    opacity: 0;
+    animation: slideFromLeft 0.6s ease-out forwards;
+    animation-delay: 0.4s;
+  }
+}
+
+@keyframes slideFromLeft {
+  from { opacity: 0; transform: translateX(-50px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes slideFromRight {
+  from { opacity: 0; transform: translateX(50px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+.main-image img {
+  transition: all 0.3s ease-in-out;
+}
+
+.h1 {
+  animation: pulse 2s infinite ease-in-out;
+  cursor: pointer;
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
+
+@media (max-width: 1200px) {
+  .second {
+    .container1, .container3, .container5 {
+      .Det .dotimage1 {
+        right: 280px;
+      }
+    }
+  }
+}
+
+@media (max-width: 992px) {
+  .first {
+    height: auto;
+    padding: 60px 0;
+
+    .container {
+      flex-direction: column;
+      gap: 40px;
+      text-align: center;
+
+      .Intro {
+        p {
+          margin-left: auto;
+          margin-right: auto;
+        }
+      }
+    }
+  }
+
+  .second {
+    padding: 60px 20px;
+
+    .container,
+    .container1,
+    .container2,
+    .container3,
+    .container4,
+    .container5 {
+      flex-direction: column;
+      gap: 60px;
+
+      .Det {
+        order: 1;
+        text-align: center;
+        margin-top: 40px;
+
+        .h1 {
+          position: static;
+          margin-bottom: 10px;
+        }
+
+        p {
+          margin-left: auto;
+          margin-right: auto;
+        }
+
+        .dotimage,
+        .dotimage1 {
+          display: none;
+        }
+      }
+
+      .main-image {
+        order: 2;
+      }
+    }
+
+    .container1,
+    .container3,
+    .container5 {
+      .Det {
+        margin-top: 0;
+      }
+    }
+
+    .container2, .container4 {
+      margin-top: 40px;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .first {
+    .container {
+      .Intro {
+        h1 {
+          font-size: 32px;
+          line-height: 1.3;
+        }
+
+        p {
+          font-size: 16px;
+        }
+      }
+    }
+  }
+
+  .second {
+    .container,
+    .container1,
+    .container2,
+    .container3,
+    .container4,
+    .container5 {
+      .Det {
+        .title,
+        .thirdtitle {
+          font-size: 28px;
+          line-height: 1.3;
+        }
+
+        p {
+          font-size: 15px;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 576px) {
+  .first {
+    .container {
+      .Intro {
+        h1 {
+          font-size: 28px;
+        }
+      }
+    }
+  }
+
+  .second {
+    .container,
+    .container1,
+    .container2,
+    .container3,
+    .container4,
+    .container5 {
+      .Det {
+        .title,
+        .thirdtitle {
+          font-size: 24px;
+        }
+
+        p {
+          font-size: 14px;
+        }
+      }
+    }
   }
 }

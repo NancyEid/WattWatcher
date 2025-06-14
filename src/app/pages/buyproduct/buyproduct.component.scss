@@ -1,0 +1,110 @@
+.page-wrapper {
+  background-color: #EFF5F4;
+  min-height: 100vh;
+  padding: 20px;
+  font-family: "Inter", sans-serif;
+  position: relative;
+}
+
+/* Style for the product cards */
+.product-card {
+  display: flex;
+  align-items: center;
+  gap: 85px;
+  padding: 100px;
+  border-radius: 10px;
+  max-width: 1200px;
+  height: 600px;
+  margin: 100px auto;
+  background-color: #F9FFFE;
+
+
+  h2 {
+    span {
+      font-weight: 700;
+    }
+
+    font-size: 32px;
+    color: #205149;
+  }
+
+  .quantity-control {
+    display: flex;
+    gap: 10px;
+
+    button {
+      background-color: transparent;
+      border: none;
+      cursor: pointer;
+      font-weight: 700;
+      font-size: 32px;
+    }
+
+    input {
+      width: 100px;
+      height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      border-radius: 10px;
+      border: 1px solid #205149;
+      color: #40A392;
+      font-size: 30px;
+      font-weight: 500;
+      background-color: transparent;
+    }
+  }
+
+  .price {
+    font-size: 32px;
+    font-weight: 600;
+    color: #205149;
+    margin: 25px;
+    position: relative;
+
+    span {
+      font-weight: 500;
+      font-size: 18px;
+      position: absolute;
+      left: -30px;
+    }
+  }
+
+  .add-to-cart {
+    display: flex;
+    gap: 5px;
+    background-color: #205149;
+    color: #F9FFFE;
+    border: none;
+    font-size: 16px;
+    font-weight: 200;
+    padding: 10px 20px;
+    cursor: pointer;
+    width: 153px;
+    height: 44px;
+    border-radius: 5px;
+    margin-right: 10px;
+
+    svg {
+      width: 24px;
+    }
+  }
+
+}
+.proceed-checkout {
+  background-color: #205149;
+  color: #F9FFFE;
+  width: 221px;
+  height: 44px;
+  border: none;
+  font-weight: 200;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 5px;
+  margin: 20px auto;
+  position: absolute;
+  bottom: 10px;
+  right: 160px;
+
+}
