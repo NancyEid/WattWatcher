@@ -17,86 +17,84 @@
   height: 600px;
   margin: 100px auto;
   background-color: #F9FFFE;
-  .image {
-    img {
-      width: 310px;
-    }
-  }
-
-
-  h2 {
-    span {
-      font-weight: 700;
-    }
-
-    font-size: 32px;
-    color: #205149;
-  }
-
-  .quantity-control {
-    display: flex;
-    gap: 10px;
-
-    button {
-      background-color: transparent;
-      border: none;
-      cursor: pointer;
-      font-weight: 700;
-      font-size: 32px;
-    }
-
-    input {
-      width: 100px;
-      height: 60px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      border-radius: 10px;
-      border: 1px solid #205149;
-      color: #40A392;
-      font-size: 30px;
-      font-weight: 500;
-      background-color: transparent;
-    }
-  }
-
-  .price {
-    font-size: 32px;
-    font-weight: 600;
-    color: #205149;
-    margin: 25px;
-    position: relative;
-
-    span {
-      font-weight: 500;
-      font-size: 18px;
-      position: absolute;
-      left: -30px;
-    }
-  }
-
-  .add-to-cart {
-    display: flex;
-    gap: 5px;
-    background-color: #205149;
-    color: #F9FFFE;
-    border: none;
-    font-size: 16px;
-    font-weight: 200;
-    padding: 10px 20px;
-    cursor: pointer;
-    width: 153px;
-    height: 44px;
-    border-radius: 5px;
-    margin-right: 10px;
-
-    svg {
-      width: 24px;
-    }
-  }
-
 }
+
+.product-card .image img {
+  width: 310px;
+}
+
+.product-card h2 {
+  font-size: 32px;
+  color: #205149;
+}
+
+.product-card h2 span {
+  font-weight: 700;
+}
+
+.product-card .quantity-control {
+  display: flex;
+  gap: 10px;
+}
+
+.product-card .quantity-control button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 32px;
+}
+
+.product-card .quantity-control input {
+  width: 100px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  border-radius: 10px;
+  border: 1px solid #205149;
+  color: #40A392;
+  font-size: 30px;
+  font-weight: 500;
+  background-color: transparent;
+}
+
+.product-card .price {
+  font-size: 32px;
+  font-weight: 600;
+  color: #205149;
+  margin: 25px;
+  position: relative;
+}
+
+.product-card .price span {
+  font-weight: 500;
+  font-size: 18px;
+  position: absolute;
+  left: -30px;
+}
+
+.product-card .add-to-cart {
+  display: flex;
+  gap: 5px;
+  background-color: #205149;
+  color: #F9FFFE;
+  border: none;
+  font-size: 16px;
+  font-weight: 200;
+  padding: 10px 20px;
+  cursor: pointer;
+  width: 153px;
+  height: 44px;
+  border-radius: 5px;
+  margin-right: 10px;
+}
+
+.product-card .add-to-cart svg {
+  width: 24px;
+}
+
 .proceed-checkout {
   background-color: #205149;
   color: #F9FFFE;
@@ -111,5 +109,105 @@
   position: absolute;
   bottom: 10px;
   right: 160px;
+}
 
+/* Responsive styles */
+@media (max-width: 1200px) {
+  .product-card {
+    max-width: 90%;
+    gap: 50px;
+    padding: 70px;
+  }
+}
+
+@media (max-width: 992px) {
+  .product-card {
+    flex-direction: column;
+    height: auto;
+    padding: 50px;
+    text-align: center;
+    gap: 30px;
+  }
+
+  .product-card .image img {
+    width: 250px;
+  }
+
+  .product-card .info {
+    width: 100%;
+  }
+
+  .product-card .quantity-control {
+    justify-content: center;
+  }
+
+  .product-card .price span {
+    position: static;
+    display: block;
+    margin-bottom: 5px;
+  }
+
+  .product-card .price {
+    margin: 25px 0;
+  }
+
+  .product-card .add-to-cart {
+    margin: 0 auto;
+  }
+
+  .proceed-checkout {
+    position: static;
+    margin: 20px auto;
+    display: block;
+  }
+}
+
+@media (max-width: 768px) {
+  .product-card {
+    padding: 30px;
+    margin: 50px auto;
+  }
+
+  .product-card h2 {
+    font-size: 24px;
+  }
+
+  .product-card .quantity-control input {
+    width: 80px;
+    height: 50px;
+    font-size: 24px;
+  }
+
+  .product-card .price {
+    font-size: 24px;
+  }
+}
+
+@media (max-width: 576px) {
+  .product-card {
+    padding: 20px;
+    margin: 30px auto;
+  }
+
+  .product-card h2 {
+    font-size: 20px;
+  }
+
+  .product-card .image img {
+    width: 200px;
+  }
+
+  .product-card .quantity-control button {
+    font-size: 24px;
+  }
+
+  .product-card .quantity-control input {
+    width: 60px;
+    height: 40px;
+    font-size: 20px;
+  }
+
+  .product-card .price {
+    font-size: 20px;
+  }
 }
