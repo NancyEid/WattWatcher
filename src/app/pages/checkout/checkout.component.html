@@ -11,27 +11,276 @@
     </div>
     <div id="cart-total"></div>
 
-    <h2>Contact Information</h2>
-    <div class="contact-info">
-      <div class="form-group">
-        <label for="firstName">First Name</label>
-        <input type="text" id="firstName" placeholder="Enter your first name">
-      </div>
-      <div class="form-group">
-        <label for="lastName">Last Name</label>
-        <input type="text" id="lastName" placeholder="Enter your last name">
-      </div>
-      <div class="form-group">
-        <label for="email">Email</label>
-        <input type="email" id="email" placeholder="Enter your email">
-      </div>
-      <div class="form-group">
-        <label for="phone">Phone Number</label>
-        <input type="tel" id="phone" placeholder="Enter your phone number">
-      </div>
-    </div>
+    <form class="form" [formGroup]="form" (ngSubmit)="onSubmit()">
+      <!-- Contact Information Section -->
+      <h2>Contact Information</h2>
+      <section class="form-section">
+        <div class="input-row">
+          <div class="mb-3">
+            <label for="firstName" class="form-label">First Name</label>
+            <input type="text" class="form-control" formControlName="firstName" id="firstName"
+              placeholder="Enter your first name">
+            @if (form.controls['firstName'].touched && form.controls['firstName'].invalid) {
+            <div>
+              @if (form.controls['firstName'].errors?.['required']) {
+              <span class="text-danger">First Name is Required</span>
+              }
+              @if (form.controls['firstName'].errors?.['minlength']) {
+              <span class="text-danger">First Name is Minimum 3 characters</span>
+              }
+              @if (form.controls['firstName'].errors?.['maxlength']) {
+              <span class="text-danger">First Name is Maximum 10 characters</span>
+              }
+            </div>
+            }
+          </div>
+          <div class="mb-3">
+            <label for="lastName" class="form-label">Last Name</label>
+            <input type="text" class="form-control" formControlName="lastName" id="lastName"
+              placeholder="Enter your last name">
+            @if (form.controls['lastName'].touched && form.controls['lastName'].invalid) {
+            <div>
+              @if (form.controls['lastName'].errors?.['required']) {
+              <span class="text-danger">Last Name is Required</span>
+              }
+              @if (form.controls['lastName'].errors?.['minlength']) {
+              <span class="text-danger">Last Name is Minimum 3 characters</span>
+              }
+              @if (form.controls['lastName'].errors?.['maxlength']) {
+              <span class="text-danger">Last Name is Maximum 10 characters</span>
+              }
+            </div>
+            }
+          </div>
+        </div>
+        <div class="input-row">
+          <div class="mb-3">
+            <label for="email" class="form-label">Email</label>
+            <input type="email" class="form-control" formControlName="email" id="email" placeholder="Enter your email">
+            @if (form.controls['email'].touched && form.controls['email'].invalid) {
+            <div>
+              @if (form.controls['email'].errors?.['required']) {
+              <span class="text-danger">Email is Required</span>
+              }
+              @if (form.controls['email'].errors?.['email']) {
+              <span class="text-danger">Email should be (example&#64;yahoo.com)</span>
+              }
+            </div>
+            }
+          </div>
+          <div class="mb-3">
+            <label for="phoneNumber" class="form-label">Phone number</label>
+            <input type="text" class="form-control" formControlName="phoneNumber" id="phoneNumber"
+              placeholder="+20 | Enter your phone number">
+            @if (form.controls['phoneNumber'].touched && form.controls['phoneNumber'].invalid) {
+            <div>
+              @if (form.controls['phoneNumber'].errors?.['required']) {
+              <span class="text-danger">Phone number is Required</span>
+              }
+              @if (form.controls['phoneNumber'].errors?.['pattern']) {
+              <span class="text-danger">Phone number must be [+20 | 10 digits]</span>
+              }
+            </div>
+            }
+          </div>
+        </div>
+      </section>
 
-    <button class="place-order">Place Order</button>
-    <div class="success-message" id="success-message">Order placed successfully!</div>
+      <!-- Delivery Information Section -->
+      <h2>Delivery Information</h2>
+      <section class="form-section">
+        <div class="input-row">
+          <div class="mb-3">
+            <label for="country" class="form-label">Country</label>
+            <input type="text" class="form-control" formControlName="country" id="country"
+              placeholder="Enter your country">
+            @if (form.controls['country'].touched && form.controls['country'].invalid) {
+            <div>
+              @if (form.controls['country'].errors?.['required']) {
+              <span class="text-danger">Country is Required</span>
+              }
+              @if (form.controls['country'].errors?.['minlength']) {
+              <span class="text-danger">Country is Minimum 2 characters</span>
+              }
+              @if (form.controls['country'].errors?.['maxlength']) {
+              <span class="text-danger">Country is Maximum 50 characters</span>
+              }
+            </div>
+            }
+          </div>
+          <div class="mb-3">
+            <label for="city" class="form-label">City</label>
+            <input type="text" class="form-control" formControlName="city" id="city" placeholder="Enter your city">
+            @if (form.controls['city'].touched && form.controls['city'].invalid) {
+            <div>
+              @if (form.controls['city'].errors?.['required']) {
+              <span class="text-danger">City is Required</span>
+              }
+              @if (form.controls['city'].errors?.['minlength']) {
+              <span class="text-danger">City is Minimum 2 characters</span>
+              }
+              @if (form.controls['city'].errors?.['maxlength']) {
+              <span class="text-danger">City is Maximum 50 characters</span>
+              }
+            </div>
+            }
+          </div>
+        </div>
+        <div class="input-row">
+          <div class="mb-3">
+            <label for="address" class="form-label">Address</label>
+            <input type="text" class="form-control" formControlName="address" id="address"
+              placeholder="Enter your address">
+            @if (form.controls['address'].touched && form.controls['address'].invalid) {
+            <div>
+              @if (form.controls['address'].errors?.['required']) {
+              <span class="text-danger">Address is Required</span>
+              }
+              @if (form.controls['address'].errors?.['minlength']) {
+              <span class="text-danger">Address is Minimum 5 characters</span>
+              }
+              @if (form.controls['address'].errors?.['maxlength']) {
+              <span class="text-danger">Address is Maximum 100 characters</span>
+              }
+            </div>
+            }
+          </div>
+          <div class="mb-3">
+            <label for="deliveryPhoneNumber" class="form-label">Delivery Phone Number</label>
+            <input type="text" class="form-control" formControlName="deliveryPhoneNumber" id="deliveryPhoneNumber"
+              placeholder="+20 | Enter your phone number">
+            @if (form.controls['deliveryPhoneNumber'].touched && form.controls['deliveryPhoneNumber'].invalid) {
+            <div>
+              @if (form.controls['deliveryPhoneNumber'].errors?.['required']) {
+              <span class="text-danger">Delivery Phone Number is Required</span>
+              }
+              @if (form.controls['deliveryPhoneNumber'].errors?.['pattern']) {
+              <span class="text-danger">Phone number must be [+20 | 10 digits]</span>
+              }
+            </div>
+            }
+          </div>
+        </div>
+      </section>
+
+      <!-- Payment Details Section -->
+      <h2>Payment Details</h2>
+      <section class="form-section">
+        <h5>Choose your payment method</h5>
+        <div class="payment-options">
+          <button type="button" class="payment-method" (click)="selectPaymentMethod('creditCard')"
+            [class.selected]="form.get('paymentMethod')?.value === 'creditCard'">
+            <span class="icon"><svg width="42" height="29" viewBox="0 0 42 29" fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M13.8125 20.25H25.3125M2.3125 10.1875H39.6875M31.0625 20.25H33.9375M5.1875 1.5625C3.75 1.5625 2.3125 3 2.3125 4.4375V24.5625C2.3125 26 3.75 27.4375 5.1875 27.4375H36.8125C38.25 27.4375 39.6875 26 39.6875 24.5625V4.4375C39.6875 3 38.25 1.5625 36.8125 1.5625H5.1875Z"
+                  stroke="#40A392" stroke-width="2.875" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+            </span>
+            <h6>Credit Card</h6>
+          </button>
+          <button type="button" class="payment-method" (click)="selectPaymentMethod('paypal')"
+            [class.selected]="form.get('paymentMethod')?.value === 'paypal'">
+            <span class="icon"><svg width="46" height="47" viewBox="0 0 46 47" fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M38.4585 16.7497C39.4015 18.4363 39.5261 20.6098 39.0335 23.1264C37.6152 30.4212 32.7564 32.9397 26.5503 32.9397H25.5919C25.2247 32.9403 24.8696 33.0719 24.5907 33.3108C24.3117 33.5497 24.1271 33.8803 24.0701 34.2431L23.9915 34.6647L22.784 42.318L22.7227 42.6438C22.6656 43.0065 22.481 43.3368 22.202 43.5754C21.923 43.814 21.5679 43.9451 21.2008 43.9452H14.7934C14.6597 43.9452 14.5276 43.9162 14.4062 43.8602C14.2848 43.8043 14.1769 43.7227 14.09 43.621C14.0031 43.5194 13.9393 43.4002 13.9029 43.2715C13.8665 43.1428 13.8584 43.0078 13.8792 42.8757L14.2146 40.7502H17.126L18.9449 29.2118H21.6014C30.5676 29.2118 36.4537 24.9894 38.4585 16.7497ZM32.7852 6.99383C34.2457 8.6575 34.6712 10.463 34.2284 13.2901C34.1901 13.5258 34.1518 13.7501 34.1077 13.9801C32.6989 21.2117 28.189 24.4182 20.7773 24.4182H17.1643C15.9568 24.4182 14.9161 25.2117 14.5711 26.3387L14.5423 26.3349L12.7598 37.6317H5.98251C5.96798 37.6323 5.95351 37.6296 5.94019 37.6238C5.92686 37.6179 5.91505 37.6091 5.90563 37.5981C5.89621 37.587 5.88943 37.5739 5.88582 37.5598C5.8822 37.5457 5.88184 37.531 5.88476 37.5167L10.8643 5.87258C10.9314 5.4439 11.1494 5.0533 11.479 4.77112C11.8087 4.48895 12.2282 4.33375 12.6621 4.3335H24.1142C28.2983 4.3335 31.2384 5.23241 32.7852 6.99383Z"
+                  fill="#40A392" />
+              </svg>
+            </span>
+            <h6>PayPal</h6>
+          </button>
+          <button type="button" class="payment-method" (click)="selectPaymentMethod('cashOnDelivery')"
+            [class.selected]="form.get('paymentMethod')?.value === 'cashOnDelivery'">
+            <span class="icon"><svg width="46" height="46" viewBox="0 0 46 46" fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M35.4583 32.2C34.1167 32.2 33.1583 31.05 33.1583 29.9C33.1583 28.5583 34.3083 27.6 35.4583 27.6C36.6083 27.6 37.7583 28.75 37.7583 29.9C37.95 31.05 36.8 32.2 35.4583 32.2ZM35.4583 23C31.8167 23 28.75 26.0667 28.75 29.7083C28.75 34.6917 35.4583 42.1667 35.4583 42.1667C35.4583 42.1667 42.1667 34.6917 42.1667 29.7083C42.1667 26.0667 39.1 23 35.4583 23ZM28.5583 21.6583C27.9833 19.1667 25.6833 17.25 23 17.25C19.7417 17.25 17.25 19.7417 17.25 23C17.25 26.2583 19.7417 28.75 23 28.75C23.7667 28.75 24.3417 28.5583 24.9167 28.3667C25.3 25.6833 26.6417 23.3833 28.5583 21.6583ZM24.9167 30.6667H13.4167C13.4167 29.65 13.0128 28.675 12.2939 27.9561C11.575 27.2372 10.6 26.8333 9.58333 26.8333V19.1667C10.6 19.1667 11.575 18.7628 12.2939 18.0439C13.0128 17.325 13.4167 16.35 13.4167 15.3333H32.5833C32.5833 16.35 32.9872 17.325 33.7061 18.0439C34.425 18.7628 35.4 19.1667 36.4167 19.1667C36.4167 19.1667 38.3333 19.1667 40.25 20.3167V11.5H5.75V34.5H25.875C25.4917 33.1583 25.1083 32.0083 24.9167 30.6667Z"
+                  fill="#40A392" />
+              </svg>
+            </span>
+            <h6> Cash On Delivery</h6>
+          </button>
+        </div>
+        <div class="credit-card-details" [class.visible]="form.get('paymentMethod')?.value === 'creditCard'">
+          <div class="credit-card-inputs">
+            <div class="input-row">
+              <div class="mb-3">
+                <label for="cardholderName" class="form-label">Cardholder Name</label>
+                <input type="text" class="form-control" formControlName="cardholderName" id="cardholderName"
+                  placeholder="Enter cardholder name">
+                @if (form.controls['cardholderName'].touched && form.controls['cardholderName'].invalid) {
+                <div>
+                  @if (form.controls['cardholderName'].errors?.['required']) {
+                  <span class="text-danger">Cardholder Name is Required</span>
+                  }
+                  @if (form.controls['cardholderName'].errors?.['minlength']) {
+                  <span class="text-danger">Cardholder Name is Minimum 3 characters</span>
+                  }
+                  @if (form.controls['cardholderName'].errors?.['maxlength']) {
+                  <span class="text-danger">Cardholder Name is Maximum 50 characters</span>
+                  }
+                </div>
+                }
+              </div>
+            </div>
+            <div class="input-row">
+              <div class="mb-3">
+                <label for="cardNumber" class="form-label">Card Number</label>
+                <input type="text" class="form-control" formControlName="cardNumber" id="cardNumber"
+                  placeholder="Enter card number">
+                @if (form.controls['cardNumber'].touched && form.controls['cardNumber'].invalid) {
+                <div>
+                  @if (form.controls['cardNumber'].errors?.['required']) {
+                  <span class="text-danger">Card Number is Required</span>
+                  }
+                  @if (form.controls['cardNumber'].errors?.['pattern']) {
+                  <span class="text-danger">Card Number must be 16 digits</span>
+                  }
+                </div>
+                }
+              </div>
+            </div>
+            <div class="input-row">
+              <div class="mb-3">
+                <label for="expiryDate" class="form-label">Expiry Date</label>
+                <input type="text" class="form-control" formControlName="expiryDate" id="expiryDate"
+                  placeholder="MM/YY">
+                @if (form.controls['expiryDate'].touched && form.controls['expiryDate'].invalid) {
+                <div>
+                  @if (form.controls['expiryDate'].errors?.['required']) {
+                  <span class="text-danger">Expiry Date is Required</span>
+                  }
+                  @if (form.controls['expiryDate'].errors?.['pattern']) {
+                  <span class="text-danger">Expiry Date must be MM/YY (e.g., 12/25)</span>
+                  }
+                </div>
+                }
+              </div>
+              <div class="mb-3">
+                <label for="cvv" class="form-label">CVV</label>
+                <input type="text" class="form-control" formControlName="cvv" id="cvv" placeholder="Enter CVV">
+                @if (form.controls['cvv'].touched && form.controls['cvv'].invalid) {
+                <div>
+                  @if (form.controls['cvv'].errors?.['required']) {
+                  <span class="text-danger">CVV is Required</span>
+                  }
+                  @if (form.controls['cvv'].errors?.['pattern']) {
+                  <span class="text-danger">CVV must be 3-4 digits</span>
+                  }
+                </div>
+                }
+              </div>
+            </div>
+          </div>
+          <div class="card-image">
+            <img src="assets/credit-card.png" alt="Credit Card" class="card-preview">
+          </div>
+        </div>
+      </section>
+
+      <button type="button" class="place-order" [disabled]="form.invalid" (click)="onSubmit()">Place Order</button>
+      <div class="success-message" id="success-message">Order placed successfully!</div>
+    </form>
   </div>
 </div>

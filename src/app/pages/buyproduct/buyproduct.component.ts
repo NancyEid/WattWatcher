@@ -16,7 +16,7 @@ export class BuyproductComponent {
   quantity1: number = 1;
   product1: Product = { name: 'WattWatcher 1', price: 750 };
   quantity2: number = 1;
-  product2: Product = { name: 'WattWatcher 2', price: 1400 };
+  product2: Product = { name: 'WattWatcher 2', price: 999 };
   cartItems: { name: string, quantity: number, price: number }[] = [];
 
   constructor(private router: Router) {}
